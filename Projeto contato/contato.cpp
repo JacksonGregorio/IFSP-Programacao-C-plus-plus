@@ -1,6 +1,7 @@
 #include <iostream>
 #include <string>
 #include <iomanip> 
+#include <vector>
 
 class Data {
 private:
@@ -107,6 +108,7 @@ void printData(const Data& data) {
 }
 
 void printContato(const Contato& contato) {
+	printData(contato.getDtnasc());
     std::cout << "---------------------------------------\n";
     std::cout << "| Contato                             |\n";
     std::cout << "|-------------------------------------|\n";
@@ -121,15 +123,33 @@ void printContato(const Contato& contato) {
 
 
 int main() {
-    Contato contatos[5] = {
-        Contato("email1@example.com", "Nome1", "123456789", Data(1, 1, 2000)),
-        Contato("email2@example.com", "Nome2", "987654321", Data(2, 2, 1995)),
-        Contato("email3@example.com", "Nome3", "555555555", Data(3, 3, 1988)),
-        Contato("email4@example.com", "Nome4", "999999999", Data(4, 4, 1992)),
-        Contato("email5@example.com", "Nome5", "111111111", Data(5, 5, 1999))
-    };
+    std::vector<Contato> contatos;
+    int numContatos;
 
-    for (int i = 0; i < 5; i++) {
+    std::cout << "Digite o número de contatos (1-5): ";
+    std::cin >> numContatos;
+
+    for (int i = 0; i < numContatos; i++) {
+        std::string email, nome, telefone;
+        int dia, mes, ano;
+
+        std::cout << "Digite o email do contato " << i+1 << ": ";
+        std::cin >> email;
+        std::cout << "Digite o nome do contato " << i+1 << ": ";
+        std::cin >> nome;
+        std::cout << "Digite o telefone do contato " << i+1 << ": ";
+        std::cin >> telefone;
+        std::cout << "Digite o dia de nascimento do contato " << i+1 << ": ";
+        std::cin >> dia;
+        std::cout << "Digite o mês de nascimento do contato " << i+1 << ": ";
+        std::cin >> mes;
+        std::cout << "Digite o ano de nascimento do contato " << i+1 << ": ";
+        std::cin >> ano;
+
+        contatos.push_back(Contato(email, nome, telefone, Data(dia, mes, ano)));
+    }
+
+    for (int i = 0; i < numContatos; i++) {
         printContato(contatos[i]);
     }
 
