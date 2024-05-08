@@ -4,7 +4,7 @@
 #include <limits>
 
 struct Funcionario {
-    std::string prontuario; // Alterado para std::string
+    std::string prontuario;
     std::string nome;
     double salario;
 };
@@ -38,7 +38,7 @@ void incluirFuncionario(std::vector<Funcionario>& funcionarios) {
 }
 
 void excluirFuncionario(std::vector<Funcionario>& funcionarios) {
-    std::string prontuario; // Change type to std::string
+    std::string prontuario;
     std::cout << "Digite o prontuario do funcionario a ser excluido: ";
     std::cin >> prontuario;
 
@@ -58,7 +58,7 @@ void excluirFuncionario(std::vector<Funcionario>& funcionarios) {
 }
 
 void pesquisarFuncionario(const std::vector<Funcionario>& funcionarios) {
-    std::string prontuario; // Change type to std::string
+    std::string prontuario;
     std::cout << "Digite o prontuario do funcionario a ser pesquisado: ";
     std::cin >> prontuario;
 
