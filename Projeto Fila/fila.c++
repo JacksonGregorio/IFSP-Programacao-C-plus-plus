@@ -13,11 +13,11 @@ int main() {
         std::cin >> opcao;
 
         switch (opcao) {
-            case 1: // Gerar senha
+            case 1:
                 senhasGeradas.push(++senha);
                 std::cout << "Senha " << senha << " gerada.\n";
                 break;
-            case 2: // Realizar atendimento
+            case 2: 
                 if (!senhasGeradas.empty()) {
                     int senhaAtendimento = senhasGeradas.front();
                     senhasGeradas.pop();
