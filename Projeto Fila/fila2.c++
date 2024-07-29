@@ -1,6 +1,7 @@
 #include <iostream>
 #include <queue>
 #include <list>
+#include <algorithm>
 
 struct Guiche {
     int id;
